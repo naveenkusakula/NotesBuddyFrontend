@@ -1,0 +1,160 @@
+<!-- Author: Dhruvi Shah -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>NotesBuddy | Registration</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		// Disable form submissions if there are invalid fields
+		(function () {
+			'use strict';
+			window.addEventListener('load', function () {
+				// Get the forms we want to add validation styles to
+				var forms = document.getElementsByClassName('needs-validation');
+				// Loop over them and prevent submission
+				var validation = Array.prototype.filter.call(forms, function (form) {
+					form.addEventListener('submit', function (event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+		})();
+	</script>
+	<script>
+		function alertbox() {
+			if ($("#myAlert").find("div#myAlert2").length == 0) {
+				$("#myAlert")
+					.append(
+						"<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+			}
+			$("#myAlert").css("display", "");
+			var x = document.getElementById("sub");
+			x.style.display = "none";
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-dark bgMenubar">
+					<div>
+						<a class="navbar-brand" href="home.html">NotesBuddy</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col banner ml-3 mr-3 ">
+				<h1>
+					<strong>Registration!</strong>
+				</h1>
+			</div>
+		</div>
+		<hr>
+		<div class="row ">
+
+			<div class="col">
+				<div class="boxRegistration">
+					<form class="mt-3" [formGroup]="registrationForm" novalidate  >
+							<div >
+									<label >**All fields are mandatory .</label>
+							</div>
+						<div class="form-group">
+							<label for="txtUpdateProfNetId">Enter Your NetId:</label>
+							<input type="text" name="username" id="username" [(ngModel)]="username" minlength="8" maxlength="8" required formControlName="username" pattern="((?:[a-z][a-z]\d+[0-9]))"
+								 class="form-control boxRegistrationField"  />
+						</div>
+						<div class="form-group" *ngIf="registrationForm.controls['username'].invalid && (registrationForm.controls['username'].dirty || registrationForm.controls['username'].touched)" class="alert boxRegistrationField alert-danger">
+							<div *ngIf="registrationForm.controls['username'].errors.required">
+							  NetId is required.
+							</div>
+							<div *ngIf="registrationForm.controls['username'].errors.maxlength || registrationForm.controls['username'].errors.minlength ||registrationForm.controls['username'].errors.pattern">
+								NetId is invalid.
+							  </div>
+						</div>
+						<div class="form-group">
+							<label for="txtUpdateEmail">Enter Your Email Address:</label> <input type="email" [(ngModel)]="emailID" pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$"
+								class="form-control boxRegistrationField" name="emailID" formControlName="emailID"
+								 id="emailID" required />
+						</div>
+						<div class="form-group" *ngIf="registrationForm.controls['emailID'].invalid && (registrationForm.controls['emailID'].dirty || registrationForm.controls['emailID'].touched)" class="alert boxRegistrationField alert-danger">
+						<div *ngIf="registrationForm.controls['emailID'].errors.required">
+										Email Address is required.
+									  </div>
+							<div *ngIf="registrationForm.controls['emailID'].errors.pattern"> 
+								Email Address is invalid.
+							  </div>
+						</div>
+						<div class="form-group">
+							<label for="txtUpdatePassword">Enter Password:</label>
+							<input type="password" name="password" id="password" [(ngModel)]="password" formControlName="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$"
+								class="form-control boxRegistrationField" id="txtUpdatePassword" />
+								<small class="font-italic"> Password should have one lower case letter, one upper case letter, one digit, 6-13 length, and no spaces.</small>
+						</div>
+						<div class="form-group" *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)" class="alert boxRegistrationField alert-danger">
+							<div *ngIf="registrationForm.controls['password'].errors.required">
+							  Password is required.
+							</div>
+							<div *ngIf="registrationForm.controls['password'].errors.pattern"> 
+									Password is invalid. Please read the insstruction.
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="chooseProgram">Select Your Program:</label>
+							<br />
+							<select id="chooseProgram" name="programID" id="programID" [(ngModel)]="programID" formControlName="programID"
+								class="custom-select custom-select-lg mb-3 boxRegistrationField">
+								<option value="{{program.id}}" *ngFor="let program of programs">{{program.name}}
+								</option>
+							</select>
+
+							<!-- <div class="form-group">
+								<label for="chooseCourse">Select Your Course:</label><br/>
+								
+								<select id="chooseCourse" name="courseID" id="courseID"	[(ngModel)]="courseID"	class="custom-select custom-select-lg mb-3 boxRegistrationField">
+									<option selected>Select Course</option>
+									<option value="1">CSCI 6100- Network Security</option>
+								<option value="2">CSCI 5100- Advance Web
+									service</option>
+								<option value="3">CSCI 4100- Quality Assurance</option>
+								<option value="4">CSCI 2100- Mobile Computing</option>
+								<option value="5">CSCI 1100- Data Mining</option>
+								<option value="6">CSCI 7100- Big Data</option>
+								<option value="7">CSCI 8100- Technology
+									Innovation</option>
+								<option value="8">CSCI 9100- Machine Learning</option>
+								</select>
+								
+							</div> -->
+						</div>
+						<div  *ngIf="registrationForm.controls['programID'].invalid && (registrationForm.controls['programID'].dirty || registrationForm.controls['programID'].touched)" class="boxRegistrationField alert alert-danger">
+							<div *ngIf="registrationForm.controls['programID'].errors.required">
+							  Select Program . It is mandatory.
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="userRole" id="userRole" [(ngModel)]="isAdmin" />
+							<hr>
+						</div>
+
+						<div class="mt-3 form-group">
+							<button type="submit" class="btn btnsubmit"  [disabled]="registrationForm.pristine || registrationForm.invalid" (click)=Register()>Submit</button>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

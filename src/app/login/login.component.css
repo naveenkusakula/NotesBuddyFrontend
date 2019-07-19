@@ -1,0 +1,86 @@
+/* Styles @Reference:https://www.w3schools.com/css/default.asp[1]*/
+/* Author: Dhruvi Shah */
+body {
+	
+	background-color: white;
+	
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+
+.bgMenubar
+{
+	background-color:#000067;
+	color:white;
+}
+
+h1{
+	color: black;
+	text-align: center;
+}
+p{
+	color: black;		
+	text-align: center;
+}
+
+img {
+  border-radius: 50%;
+ width: 150px;
+}
+
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+
+.container-fluid
+{
+
+	width:auto;  
+
+
+}
+.modal-header
+{   background-color:coral;
+	text-align: center;	
+	font-size: 50px;
+	font-family: sans-serif;
+}
+
+.form-group
+{
+	padding-top: 20px;
+}
+.form-group2
+{
+	padding-top: 15px;
+}
+
+
+
+.form-row
+{
+	color: white;
+}
+
+
+.btn-primary{
+	width: 150px;
+	margin-right: 20px;
+	margin-bottom:20px;
+	margin-top: 20px;
+	color:#000067;
+	font-weight: bolder;
+	border-radius: 100px;
+}
+
+.login{
+	text-align: center;
+}
+
+#footer {
+      text-align: center;
+    }

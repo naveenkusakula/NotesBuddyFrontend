@@ -1,0 +1,64 @@
+/* Author: Dhruvi Shah */
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+
+.hide
+{
+	display: none;
+}
+
+.boxPost
+{
+padding: 20px;	
+}
+
+.MainTitle
+{
+	font-size:3vw;
+	color:#000067;
+} 
+.mt-5 {
+  margin-top: 5 !important;
+}
+
+.bgMenubar
+{
+	background-color:#000067;
+}
+
+.boxRegistration
+{
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .2rem;
+}
+
+.boxRegistrationField
+{
+	width:60%
+}
+
+.wd-30
+{
+	width:30%;
+}
+.btnsubmit
+{
+	background-color:#000067;
+	color:white;
+}
+
+.imgboxPost
+{
+	width: 65px;
+	height:65px;
+}
+.icnPost
+{
+	width: 35px;
+	height:35px;
+}

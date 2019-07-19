@@ -1,0 +1,221 @@
+<!-- Author: Dhruvi Shah -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>NotesBuddy | Edit Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		// Disable form submissions if there are invalid fields
+		(function () {
+			'use strict';
+			window.addEventListener('load', function () {
+				// Get the forms we want to add validation styles to
+				var forms = document.getElementsByClassName('needs-validation');
+				// Loop over them and prevent submission
+				var validation = Array.prototype.filter.call(forms, function (form) {
+					form.addEventListener('submit', function (event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+		})();
+	</script>
+	<script>
+		function alertbox() {
+			if ($("#myAlert").find("div#myAlert2").length == 0) {
+				$("#myAlert")
+					.append(
+						"<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+			}
+			$("#myAlert").css("display", "");
+
+			var x = document.getElementById("sub");
+			x.style.display = "none";
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-dark bgMenubar">
+					<div>
+						<a class="navbar-brand" routerLink="/homePage">NotesBuddy</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active"><a class="nav-link" routerLink="/homePage">HOME</a></li>
+							
+							<li class="nav-item"><a class="nav-link" routerLink="/homePage">Donate</a>
+							</li>
+
+							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop1"
+									data-toggle="dropdown"> Support </a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="faq.html">FAQs</a> <a class="dropdown-item"
+										href="howTo.html">How-Tos</a> <a class="dropdown-item"
+										href="sitePolicy.html">Site Policy</a> <a class="dropdown-item"
+										href="contactUs.html">Contact Us</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="clearfix">
+						<div class="float-left">
+							<form class="form-inline ">
+								<input class="form-control mr-sm-2 " type="search" id="menuSearch" placeholder="Search"
+									aria-label="Search">
+								<button type="submit" class="btn btn-light my-2 my-sm-0">Search</button>
+							</form>
+						</div>
+						<div class="float-right">
+							<ul class="navbar-nav mr-auto justify-content-end">
+								<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+										id="navbardrop" data-toggle="dropdown"> @username </a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="savedArticle.html">Saved
+											Article</a> <a class="dropdown-item" routerLink="/logout">SignOut</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col banner ml-3 mr-3 ">
+				<h1>
+					<strong>Edit Profile</strong>
+				</h1>
+			</div>
+		</div>
+		<hr>
+		<div class="row ">
+			<div class="col">
+				<div class="boxEditProfile">
+					<div class="mainTitle">Please fill out the form to update
+						your profile.</div>
+					<div><a class="dropdown-item" routerLink="/deleteProfile">Delete Profile</a> </div>
+					<form class="mt-3" [formGroup]="UpdateProfileForm" novalidate>
+						<div class="form-group">
+							<label for="txtUpdateProfNetId">Your NetId:</label>
+							<input type="text" name="username" id="username" formControlName="username"
+								value="{{username}}" class="form-control boxEditProfileField" disabled />
+						</div>
+
+						<div class="form-group">
+							<label for="emailID">Enter Your Email Address:</label> <input type="email"
+								pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$"
+								class="form-control boxEditProfileField" name="emailID" formControlName="emailID"
+								value="{{emailID}}" id="emailID" required />
+						</div>
+						<div class="form-group" *ngIf="UpdateProfileForm.controls['emailID'].invalid "
+							class="alert boxEditProfileField alert-danger">
+							<div *ngIf="UpdateProfileForm.controls['emailID'].errors.required">
+								Email Address is required.
+							</div>
+							<div *ngIf="UpdateProfileForm.controls['emailID'].errors.pattern">
+								Email Address is invalid.
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label for="txtUpdatePassword">Enter Password:</label>
+							<input type="password" name="password" id="password" [(ngModel)]="password"
+								formControlName="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$"
+								class="form-control boxEditProfileField" id="txtUpdatePassword" />
+							<small class="font-italic"> Password should have one lower case letter, one upper case
+								letter, one digit, 6-13 length, and no spaces.</small>
+						</div>
+						<div class="form-group"
+							*ngIf="UpdateProfileForm.controls['password'].invalid && (UpdateProfileForm.controls['password'].dirty || UpdateProfileForm.controls['password'].touched)"
+							class="alert boxEditProfileField alert-danger">
+							<div *ngIf="UpdateProfileForm.controls['password'].errors.required">
+								Password is required.
+							</div>
+							<div *ngIf="UpdateProfileForm.controls['password'].errors.pattern">
+								Password is invalid. Please read the insstruction.
+							</div>
+						</div>
+						<div class="form-group">
+								<label for="conPassword">Confirm Password:</label>
+								<input type="password" name="conPassword" id="conPassword" [(ngModel)]="conPassword"
+									formControlName="conPassword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$"
+									class="form-control boxEditProfileField" />
+							</div>
+							<div class="form-group"
+								*ngIf="UpdateProfileForm.controls['conPassword'].invalid && (UpdateProfileForm.controls['conPassword'].dirty || UpdateProfileForm.controls['conPassword'].touched)"
+								class="alert boxEditProfileField alert-danger">
+								
+								<div *ngIf="UpdateProfileForm.controls['conPassword'].errors.pattern">
+									Password is invalid. Please read the instruction.
+								</div>
+								<div *ngIf="(UpdateProfileForm.value.password !== UpdateProfileForm.value.conPassword) ">
+										Passwords don't match.
+								</div>
+								<div *ngIf="UpdateProfileForm.controls['conPassword'].errors.required">
+										Password is required.
+								</div>
+							</div> -->
+
+						<div class="form-group">
+							<label for="chooseProgram">Select Your Program:</label>
+							<br />
+							<select id="chooseProgram" name="programID" id="programID" [(ngModel)]="programID"
+								formControlName="programID" [value]='programID'
+								class="custom-select custom-select-lg mb-3 boxEditProfileField">
+								<option value="{{program.id}}" *ngFor="let program of programs">{{program.name}}
+								</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="chooseCourse">Select Your Course:</label>
+							<br />
+							<select id="chooseCourse" name="courseID" id="courseID" [(ngModel)]="courseID"
+								formControlName="courseID"
+								class="custom-select custom-select-lg mb-3 boxEditProfileField">
+								<option value="{{course.id}}" *ngFor="let course of courses">{{course.name}}
+								</option>
+							</select>
+						</div>
+
+
+						<div class="mt-3 form-group">
+							<button type="submit" class="btn btnsubmit"
+								[disabled]="UpdateProfileForm.pristine || registrationForm.invalid"
+								(click)=Update()>Update</button>
+						</div>
+
+						<div class="form-group hide" id="myAlert">
+							<div class="alert alert-success alert-dismissable" id="myAlert2">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-hidden="true">&times;</button>
+								<strong>Success!</strong> Item has been posted.
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

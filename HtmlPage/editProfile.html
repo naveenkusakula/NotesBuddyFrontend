@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>NotesBuddy | Edit Profile</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+	// Disable form submissions if there are invalid fields
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+			// Get the forms we want to add validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
+	})();
+</script>
+<link href="css/editProfile.css" type="text/css" rel="stylesheet">
+<script>
+	function alertbox() {
+		if ($("#myAlert").find("div#myAlert2").length == 0) {
+			$("#myAlert")
+					.append(
+							"<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+		}
+		$("#myAlert").css("display", "");
+
+		var x = document.getElementById("sub");
+		x.style.display = "none";
+	}
+</script>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-dark bgMenubar">
+					<div>
+						<a class="navbar-brand" href="home.html">NotesBuddy</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active"><a class="nav-link"
+								href="home.html">HOME</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="courseHome.html">COURSE</a></li>
+							<li class="nav-item"><a class="nav-link" href="donate.html">Donate</a>
+							</li>
+
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="navbardrop1"
+								data-toggle="dropdown"> Support </a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="faq.html">FAQs</a> <a
+										class="dropdown-item" href="howTo.html">How-Tos</a> <a
+										class="dropdown-item" href="sitePolicy.html">Site Policy</a> <a
+										class="dropdown-item" href="contactUs.html">Contact Us</a>
+								</div></li>
+						</ul>
+					</div>
+
+					<div class="clearfix">
+						<div class="float-left">
+							<form class="form-inline ">
+								<input class="form-control mr-sm-2 " type="search"
+									id="menuSearch" placeholder="Search" aria-label="Search">
+								<button type="submit" class="btn btn-light my-2 my-sm-0">Search</button>
+							</form>
+						</div>
+						<div class="float-right">
+							<ul class="navbar-nav mr-auto justify-content-end">
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle" href="#" id="navbardrop"
+									data-toggle="dropdown"> @username </a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="editProfile.html">Edit
+											Profile</a> <a class="dropdown-item" href="savedArticle.html">Saved
+											Article</a> <a class="dropdown-item" href="myArticles.html">My
+											Articles</a> <a class="dropdown-item" href="landingpage.html">SignOut</a>
+									</div></li>
+							</ul>
+						</div>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col banner ml-3 mr-3 ">
+				<h1>
+					<strong>Edit Profile</strong>
+				</h1>
+			</div>
+		</div>
+		<hr>
+
+		<div class="row ">
+
+			<div class="col">
+				<div class="boxEditProfile">
+					<div class="mainTitle">Please fill out the form to update
+						your profile.</div>
+					<form action="/action_page.php" class="mt-3">
+						<div class="form-group">
+							<label for="txtUpdateProfNetId">NetId</label> <input type="text"
+								class="form-control boxEditProfileField" id="txtUpdateProfNetId"
+								disabled="disabled" value="B00812683">
+
+						</div>
+						<div class="form-group">
+							<label for="txtUpdateEmail">Email Address</label> <input
+								type="email" class="form-control boxEditProfileField"
+								id="txtUpdateEmail" value="dh670089@dal.ca" name="email"
+								required>
+						</div>
+						<div class="form-group">
+							<label for="txtUpdatePassword">Password</label> <input
+								type="password" class="form-control boxEditProfileField"
+								id="txtUpdatePassword"> <small class="font-italic">The
+								Password should be minimum 8 characters and should include a
+								number, a UpperCase alphabet and a symbol.</small>
+						</div>
+						<div class="form-group">
+							<label for="txtUpdatePassword2">Confirm Password</label> <input
+								type="password" class="form-control boxEditProfileField"
+								id="txtUpdatePassword2"> <span class="conPswdMessage"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="drpUpdateProfProgram">Program</label> <select
+								class="form-control boxEditProfileField"
+								id="drpUpdateProfProgram">
+								<option>Masters in Applied Computer Science</option>
+								<option>Masters in Computer Science</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="drpUpdateProfCourse">Course</label> <select multiple
+								class="form-control boxEditProfileField"
+								id="drpUpdateProfCourse">
+								<option selected="selected">CSCI 6100- Network Security</option>
+								<option selected="selected">CSCI 5100- Advance Web
+									service</option>
+								<option>CSCI 4100- Quality Assurance</option>
+								<option selected="selected">CSCI 3100- Cloud Computing</option>
+								<option>CSCI 2100- Mobile Computing</option>
+								<option>CSCI 1100- Data Mining</option>
+								<option>CSCI 7100- Big Data</option>
+								<option selected="selected">CSCI 8100- Technology
+									Innovation</option>
+								<option>CSCI 9100- Machine Learning</option>
+							</select>
+						</div>
+
+
+						<div class="mt-3 form-group">
+							<button type="submit" class="btn btnsubmit" onclick="alertbox();">Update</button>
+						</div>
+
+						<div class="form-group hide" id="myAlert">
+							<div class="alert alert-success alert-dismissable" id="myAlert2">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-hidden="true">&times;</button>
+								<strong>Success!</strong> Item has been posted.
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$('#txtUpdatePassword2').focusout(function() {
+		var pass = $('#txtUpdatePassword').val();
+		var pass2 = $('#txtUpdatePassword2').val();
+		if (pass != pass2) {
+			$('#txtUpdatePassword').css({
+				"color" : "red"
+			});
+			$('#txtUpdatePassword2').css({
+				"color" : "red"
+			});
+			$('#btnUpdateProfile').attr("disabled", true);
+		} else {
+			$('#txtUpdatePassword').css({
+				"color" : "black"
+			});
+			$('#txtUpdatePassword2').css({
+				"color" : "black"
+			});
+			$('#btnUpdateProfile').attr("disabled", false);
+		}
+
+	});
+	$('#txtUpdatePassword').focusout(function() {
+		var pass = $('#txtUpdatePassword').val();
+		var pass2 = $('#txtUpdatePassword2').val();
+		if (pass != pass2 && pass2 != "") {
+			$('#txtUpdatePassword').css({
+				"color" : "red"
+			});
+			$('#txtUpdatePassword2').css({
+				"color" : "red"
+			});
+			$('#btnUpdateProfile').attr("disabled", true);
+		} else {
+			$('#txtUpdatePassword').css({
+				"color" : "black"
+			});
+			$('#txtUpdatePassword2').css({
+				"color" : "black"
+			});
+			$('#btnUpdateProfile').attr("disabled", false);
+		}
+	});
+</script>
+</body>
+</html>

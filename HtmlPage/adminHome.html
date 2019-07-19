@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>NotesBuddy |Admin Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="css/home.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-dark bgMenubar">
+					<div>
+						<a class="navbar-brand" href="home.html">NotesBuddy</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active"><a class="nav-link"
+								href="home.html">HOME</a></li>
+							<!-- <li class="nav-item"><a class="nav-link"
+								href="courseHome.html">COURSE</a></li>
+							<li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li> -->
+
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="navbardrop1"
+								data-toggle="dropdown"> Support </a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="faq.html">FAQs</a> <a
+										class="dropdown-item" href="howTo.html">How-Tos</a> <a
+										class="dropdown-item" href="sitePolicy.html">Site Policy</a> <a
+										class="dropdown-item" href="contactUs.html">Contact Us</a>
+								</div></li>
+						</ul>
+					</div>
+
+					<div class="clearfix">
+						<div class="float-left">
+							<form class="form-inline ">
+								<input class="form-control mr-sm-2 " type="search"
+									id="menuSearch" placeholder="Search" aria-label="Search">
+								<button type="submit" class="btn btn-light my-2 my-sm-0">Search</button>
+							</form>
+						</div>
+						<div class="float-right">
+							<ul class="navbar-nav mr-auto justify-content-end">
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle" href="#" id="navbardrop"
+									data-toggle="dropdown"> @Admin </a>
+									<div class="dropdown-menu">
+										<!-- 	<a class="dropdown-item" href="editProfile.html">Edit
+											Profile</a> <a class="dropdown-item" href="savedArticle.html">Saved
+											Article</a> <a class="dropdown-item" href="myArticles.html">My
+											Articles</a> -->
+										<a class="dropdown-item" href="reporting.html">View
+											Reports</a> <a class="dropdown-item" href="landingpage.html">SignOut</a>
+									</div></li>
+							</ul>
+						</div>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col banner ml-3 mr-3 ">
+				<h1>
+					<strong>Welcome to Notes Buddy</strong>
+				</h1>
+			</div>
+		</div>
+		<hr>
+
+		<div class="row ">
+
+			<div class="col ">
+
+				<h3 class="ml-3 mr-3">
+					<strong>Search any course</strong>
+				</h3>
+
+
+				<form>
+					<div class="form-group col-6 ">
+						<label for="sltProgram">Program</label> <select id="sltProgram"
+							class="form-control">
+							<option >Choose Program...</option>
+							<option selected="selected">Masters in Applied Computer Science</option>
+								<option>Masters in Computer Science</option>
+						</select>
+					</div>
+					<div class="form-group col-6">
+						<label for="sltCourse">Course</label> <select id="sltCourse"
+							class="form-control">
+							<option selected>Choose Course...</option>
+								<option>CSCI 6100- Network Security</option>
+								<option selected="selected">CSCI 5100- Advance Web
+									service</option>
+								<option>CSCI 4100- Quality Assurance</option>
+								<option >CSCI 3100- Cloud Computing</option>
+								<option>CSCI 2100- Mobile Computing</option>
+								<option>CSCI 1100- Data Mining</option>
+								<option>CSCI 7100- Big Data</option>
+								<option>CSCI 8100- Technology
+									Innovation</option>
+								<option>CSCI 9100- Machine Learning</option>
+						</select>
+					</div>
+					 <button type="submit" class="btn btnsubmit ml-3 mr-3">Search</button>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>

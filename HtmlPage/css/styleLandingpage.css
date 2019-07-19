@@ -1,0 +1,52 @@
+/* Styles @Reference:https://www.w3schools.com/css/default.asp[1]*/
+body {
+	
+	background-color: #FEFFFF;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+.container
+{
+	width:900px; 
+	height: 500px; 	
+	align-text: center;
+	background-image: url(../image/notes.jpg);
+	background-repeat: no-repeat;
+	
+}
+
+.postion
+{
+	position:absolute;
+	bottom:50;
+}	
+
+.heading{
+	font-family:ComicSansMS;
+	font-size: 75px;
+	color: black;
+	text-align: center;
+}
+s
+.text{
+	font-size: 30px;
+	color: #123C69;
+	text-align: center;
+}
+p{
+	font-size: 30px;
+	color: #123C69;
+	text-align: center;
+}
+
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; }
+
+    #footer {
+
+    text-align: center;
+  }
+

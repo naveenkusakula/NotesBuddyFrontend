@@ -1,0 +1,60 @@
+<!-- Author: Dhruvi Shah -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NotesBuddy</title>
+  <meta charset="utf-8">
+  <!--Description about webpage through metadata for google to perform search and pull website details accordingly based on keywords. @Reference :https://www.w3schools.com/tags/tag_meta.asp!-->
+  <meta name= "description" content="">
+  <meta name="keywords" content="NoteSharing, study, chat, posts,courses">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--bootstrap @Reference https://getbootstrap.com/2.3.2/ !-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.CSSs">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body> 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col banner ml-3 mr-3 ">
+        <h1>
+          <strong>Welcome to NotesBuddy!!!</strong>
+        </h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4 login" >
+        <img src="assets/image/img_avatar.png" alt="Avatar">
+        <br>
+        <br>
+        <br>
+        <br>
+        <form >
+          <input type="text" class="form-control" id="UserName" [(ngModel)]="username"  value="{{username}}" placeholder="NetId" name="userName" required />
+          <br>
+          <input type="password" class="form-control" id="Password" name="Password" [(ngModel)]="u_password" value="{{password}}" placeholder="Password" required />
+          <button type="submit" class="btn btn-primary" (click)=checkLogin()>Login</button>
+        </form>
+        <a routerLink="/forgetpassword" href="forgotpassword.html">Forgot password?</a>
+        &nbsp;<a routerLink="/registration" href="registration.html"> New User?</a>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <div class="col-sm-4">
+      </div>
+    </div>
+</div>
+
+    <!--footer section with copyright and website link !-->
+    
+ </body>
+  <!--Footer Section from https://startbootstrap.com/themes/landing-page/!-->
+  <!--footer section with copyright and website link !-->
+
+  </html>

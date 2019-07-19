@@ -1,0 +1,33 @@
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+
+
+.hide
+{
+	display: none;
+}
+
+.boxFAQ
+{
+padding: 20px;	
+}
+
+.MainTitle
+{
+	font-size:2vw;
+	color:#000067;
+} 
+.bgMenubar
+{
+	background-color:#000067;
+}
+
+.btnsubmit
+{
+	background-color:#000067;
+	color:white;
+}
+

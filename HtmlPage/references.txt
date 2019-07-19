@@ -1,0 +1,11 @@
+icons
+notes-https://www.flaticon.com/free-icon/note_259500
+booksicon- https://img.icons8.com/cotton/64/000000/book.png
+question mark - https://img.icons8.com/metro/26/000000/questions.png
+icon- https://cdn0.iconfinder.com/data/icons/tiny-icons-1/100/tiny-08-512.png
+saveIcon - https://img.icons8.com/material-outlined/24/000000/save-search.png
+removeIcon - https://img.icons8.com/material/24/000000/remove-book.png
+download - https://img.icons8.com/material-rounded/24/000000/download.png
+view- https://img.icons8.com/material-outlined/24/000000/view-file.png
+downArrow - https://img.icons8.com/material-rounded/24/000000/down-squared.png
+Images

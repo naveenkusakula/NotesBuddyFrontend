@@ -1,0 +1,69 @@
+/* Author Name: Sunit Shah */
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+
+.frmUploadFile
+{
+margin-right: 25px;
+}
+
+.hide
+{
+	display: none;
+}
+
+.boxPost
+{
+padding: 20px;	
+}
+
+.MainTitle
+{
+	font-size:3vw;
+	color:#000067;
+} 
+.mt-5 {
+  margin-top: 5 !important;
+}
+
+.bgMenubar
+{
+	background-color:#000067;
+}
+
+
+.wd-30
+{
+	width:30%;
+}
+.btnsubmit
+{
+	background-color:#000067;
+	color:white;
+}
+
+.imgboxPost
+{
+	width: 65px;
+	height:65px;
+}
+.icnPost
+{
+	width: 35px;
+	height:35px;
+}
+
+.bgCardbackground{
+	border-style: inset;
+	border-color: rgb(0, 0, 103);
+	background-image: linear-gradient(to bottom right,white, rgb(0, 0, 103) );
+}
+
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+   }

@@ -1,0 +1,49 @@
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+.boxPost
+{
+padding: 20px;	
+}
+
+.bgMenubar
+{
+	background-color:#000067;
+}
+
+
+.btnsubmit
+{
+	background-color:#000067;
+	color:white;
+}
+
+.mainTitle
+{
+	font-size:2vw;
+	color:#000067;
+} 
+
+.hide
+{
+	display:none;
+}
+
+.boxContactUsField
+{
+	width:60%
+}
+
+.fntColor
+{
+	color:#000067;
+}
+.boxContactUs
+{
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .2rem;
+}

@@ -1,0 +1,51 @@
+.banner
+{
+	padding: 50px;
+	background-color: rgb(245, 210, 0);
+}
+
+.frmUploadFile
+{
+margin-right: 25px;
+}
+
+.hide
+{
+	display: none;
+}
+
+.boxPost
+{
+padding: 20px;	
+}
+
+.MainTitle
+{
+	font-size:3vw;
+	color:#000067;
+} 
+.mt-5 {
+  margin-top: 5 !important;
+}
+
+.bgMenubar
+{
+	background-color:#000067;
+}
+.btnsubmit
+{
+	background-color:#000067;
+	color:white;
+}
+
+.imgboxPost
+{
+	width: 65px;
+	height:65px;
+}
+
+.icnCourseMenu
+{
+padding-left:20px;
+width: 2.25rem;
+height:1rem;
